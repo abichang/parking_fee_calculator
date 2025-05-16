@@ -1,4 +1,4 @@
-export function calculateParkingFee(
+export function calculate(
   startTime: Date,
   endTime: Date,
   hourlyRate: number,

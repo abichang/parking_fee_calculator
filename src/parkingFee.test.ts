@@ -1,4 +1,4 @@
-import { calculateParkingFee } from './parkingFee';
+import { calculate } from './parkingFee';
 
 describe('calculateParkingFee', () => {
   it('应该正确计算1小时内的停车费用', () => {
@@ -7,7 +7,7 @@ describe('calculateParkingFee', () => {
     const hourlyRate = 30;
     const dailyMax = 300;
 
-    const fee = calculateParkingFee(startTime, endTime, hourlyRate, dailyMax);
+    const fee = calculate(startTime, endTime, hourlyRate, dailyMax);
     expect(fee).toBe(15); // 30分钟，按小时费率的一半计算
   });
 
@@ -17,7 +17,7 @@ describe('calculateParkingFee', () => {
     const hourlyRate = 30;
     const dailyMax = 300;
 
-    const fee = calculateParkingFee(startTime, endTime, hourlyRate, dailyMax);
+    const fee = calculate(startTime, endTime, hourlyRate, dailyMax);
     expect(fee).toBe(75); // 2.5小时，每小时30元
   });
 
@@ -27,7 +27,7 @@ describe('calculateParkingFee', () => {
     const hourlyRate = 30;
     const dailyMax = 300;
 
-    const fee = calculateParkingFee(startTime, endTime, hourlyRate, dailyMax);
+    const fee = calculate(startTime, endTime, hourlyRate, dailyMax);
     expect(fee).toBe(300); // 应该不超过每日最高限额
   });
 
@@ -37,7 +37,7 @@ describe('calculateParkingFee', () => {
     const hourlyRate = 30;
     const dailyMax = 300;
 
-    const fee = calculateParkingFee(startTime, endTime, hourlyRate, dailyMax);
+    const fee = calculate(startTime, endTime, hourlyRate, dailyMax);
     expect(fee).toBe(60); // 2小时，每小时30元
   });
 }); 
