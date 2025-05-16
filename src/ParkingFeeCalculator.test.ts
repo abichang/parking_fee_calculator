@@ -1,3 +1,5 @@
+import { calculate } from './ParkingFeeCalculator';
+
 describe('calculate parking fee', () => {
     it('15 mins free', () => {
 
