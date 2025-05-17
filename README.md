@@ -10,7 +10,7 @@
 
 [Kuma 老師的軟體工程教室](https://www.youtube.com/@kukumamaya)
 提供在[【「早知道就停紅線」- 用 TDD 寫出一個會上新聞的停車場收費計算器】](https://www.youtube.com/playlist?list=PLvBh-90IwbPKFUUFw1PTezAVQqi0PUhTB)
-一系列影片中的測項，讓我得以產出可重構的醜程式碼。
+一系列影片中的測試項目，讓我得以使用 Cursor 產出可重構的醜程式碼。
 
 ## 授權聲明
 
