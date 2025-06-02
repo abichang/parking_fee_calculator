@@ -26,8 +26,8 @@ describe('calculate parking fee', () => {
     it('over 30 mins then pay 60', () => {
 
 
-        const start = new Date('2024-01-02T00:01:00');
-        const end = new Date('2024-01-02T00:31:01');
+        const start = new Date('2024-01-02T00:00:00');
+        const end = new Date('2024-01-02T00:30:01');
 
         const actual = calculate(start, end);
 
