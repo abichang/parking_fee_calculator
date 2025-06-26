@@ -3,7 +3,6 @@ import { calculate } from './ParkingFeeCalculator';
 describe('calculate parking fee', () => {
     it('15 mins free', () => {
 
-
         const start = new Date('2024-01-02T00:00:00');
         const end = new Date('2024-01-02T00:15:00');
 
@@ -13,7 +12,6 @@ describe('calculate parking fee', () => {
     });
 
     it('over 15 mins NOT free', () => {
-
 
         const start = new Date('2024-01-02T00:00:00');
         const end = new Date('2024-01-02T00:15:01');
@@ -25,7 +23,6 @@ describe('calculate parking fee', () => {
 
     it('over 30 mins then pay 60', () => {
 
-
         const start = new Date('2024-01-02T00:00:00');
         const end = new Date('2024-01-02T00:30:01');
 
@@ -35,7 +32,6 @@ describe('calculate parking fee', () => {
     });
 
     it('over 60 mins then pay 90', () => {
-
 
         const start = new Date('2024-01-02T00:00:00');
         const end = new Date('2024-01-02T01:00:01');
@@ -47,7 +43,6 @@ describe('calculate parking fee', () => {
 
     it('over 150 mins then pay 150', () => {
 
-
         const start = new Date('2024-01-02T00:00:00');
         const end = new Date('2024-01-02T02:30:01');
 
@@ -57,7 +52,6 @@ describe('calculate parking fee', () => {
     });
 
     it('two whole days', () => {
-
 
         const start = new Date('2024-01-02T00:00:00');
         const end = new Date('2024-01-04T00:00:00');
@@ -70,7 +64,6 @@ describe('calculate parking fee', () => {
 
     it('partial day then whole day', () => {
 
-
         const start = new Date('2024-01-02T23:50:00');
         const end = new Date('2024-01-04T00:00:00');
 
@@ -80,7 +73,6 @@ describe('calculate parking fee', () => {
     });
 
     it('whole day then partial day', () => {
-
 
         const start = new Date('2024-01-02T00:00:00');
         const end = new Date('2024-01-03T00:10:00');
@@ -92,7 +84,6 @@ describe('calculate parking fee', () => {
 
     it('Saturday pay 50 per half hour', () => {
 
-
         const start = new Date('2024-01-06T00:00:00');
         const end = new Date('2024-01-06T00:15:01');
 
@@ -102,7 +93,6 @@ describe('calculate parking fee', () => {
     });
 
     it('Sunday pay 50 per half hour', () => {
-
 
         const start = new Date('2024-01-07T00:00:00');
         const end = new Date('2024-01-07T00:15:01');
@@ -114,7 +104,6 @@ describe('calculate parking fee', () => {
 
     it('Saturday daily limit is 2400', () => {
 
-
         const start = new Date('2024-01-06T00:00:00');
         const end = new Date('2024-01-07T00:00:00');
 
@@ -124,7 +113,6 @@ describe('calculate parking fee', () => {
     });
 
     it('National holiday pay 50 per half hour', () => {
-
 
         const start = new Date('2024-01-01T00:00:00');
         const end = new Date('2024-01-01T00:15:01');
