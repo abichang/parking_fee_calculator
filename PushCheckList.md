@@ -4,6 +4,6 @@
 
 - Anthea
 - Paul
-- Andrew
+✔️ Andrew
 - Ethan
 - Sasha
