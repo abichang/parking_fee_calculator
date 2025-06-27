@@ -1,3 +1,7 @@
+function isFullDay(end: Date) {
+    return end.getHours() === 0 && end.getMinutes() === 0;
+}
+
 export const calculate = (start: Date, end: Date): number => {
     const freeMinutes = 15;
     const dailyMax = 150;
@@ -51,7 +55,7 @@ export const calculate = (start: Date, end: Date): number => {
     let totalFee = 0;
 
     // 計算第一天的費用
-    if (start.getHours() === 0 && start.getMinutes() === 0) {
+    if (isFullDay(start)) {
         // 如果是完整天數，檢查是否為週六
         if (start.getDay() === 6) {
             totalFee += saturdayMax;
@@ -64,11 +68,7 @@ export const calculate = (start: Date, end: Date): number => {
     }
 
     // 計算最後一天的費用
-    if (end.getHours() === 0 && end.getMinutes() === 0) {
-        // 如果是0點結束，不計費
-        totalFee += 0;
-    } else {
-        // 如果不是0點結束，直接收30元
+    if (!isFullDay(end)) {
         totalFee += 30;
     }
 
