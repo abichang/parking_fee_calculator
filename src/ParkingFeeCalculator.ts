@@ -1,8 +1,12 @@
+function isHoliday(start: Date) {
+    return start.getDay() === 6 || start.getDay() === 0 || start.getDate() === 1;
+}
+
 const calcDailyFee = (end: Date, start: Date, freeMinutes: number, dailyMax: number) => {
     const totalMinutes = Math.ceil((end.getTime() - start.getTime()) / 60000);
 
     // 檢查是否為週六、週日或國定假日
-    if (start.getDay() === 6 || start.getDay() === 0 || start.getDate() === 1) {
+    if (isHoliday(start)) {
         // 週六日及國定假日每半小時收費50元
         if (totalMinutes <= freeMinutes) {
             return 0;
