@@ -2,9 +2,7 @@ function isFullDay(end: Date) {
     return end.getHours() === 0 && end.getMinutes() === 0;
 }
 
-function calcTodayFee(end: Date, start: Date, freeMinutes: number, dailyMax: number) {
-    const totalMinutes = Math.ceil((end.getTime() - start.getTime()) / 60000);
-
+function calcTodayFee(end: Date, start: Date, freeMinutes: number, dailyMax: number, totalMinutes: number) {
     // 檢查是否為週六、週日或國定假日
     if (start.getDay() === 6 || start.getDay() === 0 || start.getDate() === 1) {
         // 週六日及國定假日每半小時收費50元
@@ -46,10 +44,15 @@ export const calculate = (start: Date, end: Date): number => {
     const startDay = new Date(start.getFullYear(), start.getMonth(), start.getDate());
     const endDay = new Date(end.getFullYear(), end.getMonth(), end.getDate());
     const totalDays = Math.ceil((endDay.getTime() - startDay.getTime()) / (24 * 60 * 60 * 1000));
+        let totalMinutes = Math.ceil((end.getTime() - start.getTime()) / 60000);
+
+        if (totalMinutes <= freeMinutes) {
+            return 0;
+        }
 
     // 如果是同一天
     if (totalDays === 0) {
-        return calcTodayFee(end, start, freeMinutes, dailyMax);
+        return calcTodayFee(end, start, freeMinutes, dailyMax, totalMinutes);
     }
 
     // 跨日的情況
