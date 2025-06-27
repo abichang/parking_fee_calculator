@@ -60,10 +60,7 @@ export const calculate = (start: Date, end: Date): number => {
         totalFee += 30;
     }
 
-    // 計算中間完整天數的費用
-    if (totalDays > 1) {
-        totalFee += (totalDays - 1) * dailyMax;
-    }
 
-    return totalFee;
+    return totalFee + (totalDays - 1) * dailyMax;
+
 };
