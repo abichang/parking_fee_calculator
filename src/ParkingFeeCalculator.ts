@@ -15,6 +15,10 @@ const calcDailyFee = (end: Date, start: Date, freeMinutes: number, dailyMax: num
         return 0;
     }
 
+    const number = Math.floor(totalMinutes / 30);
+
+    return Math.min((number + 1) * 30, dailyMax);
+
     // 超過15分鐘收費30元
     if (totalMinutes > 15 && totalMinutes <= 30) {
         return 30;
