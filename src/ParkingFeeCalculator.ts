@@ -6,15 +6,7 @@ function calcTodayFee(end: Date, start: Date, freeMinutes: number, dailyMax: num
     // 檢查是否為週六、週日或國定假日
     if (start.getDay() === 6 || start.getDay() === 0 || start.getDate() === 1) {
         // 週六日及國定假日每半小時收費50元
-        if (totalMinutes <= freeMinutes) {
-            return 0;
-        }
         return 50;
-    }
-
-    // 15分鐘內免費
-    if (totalMinutes <= freeMinutes) {
-        return 0;
     }
 
     // 超過15分鐘收費30元
