@@ -2,7 +2,7 @@
 
 ✔️ Abi
 
-- Anthea
+- ✔️ Anthea
 ✔️ Paul
 ✔️ Andrew
 ✔️ Ethan
