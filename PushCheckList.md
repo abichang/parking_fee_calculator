@@ -1,9 +1,9 @@
 # For Checking Push
 
 ✔️ Abi
-
-- ✔️ Anthea
+✔️ Anthea
 ✔️ Paul
-✔️  Andrew
-✔️  Ethan
-✔️  Sasha
+✔️ Andrew
+✔️ Ethan
+✔️ Sasha
+Zane
